@@ -4,7 +4,7 @@ body {
   margin: 0;
   overflow: hidden;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #f8f9fb, #d1e7dd);
+  background: linear-gradient(135deg, #f8f9fa, #d1e7dd);
   background-image: url("https://images.pexels.com/photos/18077985/pexels-photo-18077985/free-photo-of-venice-italy-the-grand-canal-the-doge-s-palace-and-the-bell-tower-of-the-basilica-di-san-marco.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   background-size: cover;
   background-position: center;
