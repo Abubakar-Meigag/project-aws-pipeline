@@ -60,7 +60,7 @@ button {
   padding: 15px 30px;
   font-size: 18px;
   cursor: pointer;
-  background-color: #df6011;
+  background-color: #83dae4;
   color: white;
   border: none;
   border-radius: 5px;
@@ -69,7 +69,7 @@ button {
 }
 
 button:hover {
-  background-color: #18b300;
+  background-color: #b30071;
 }
 
 .form-div {

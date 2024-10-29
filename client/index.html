@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>Beko Random Pictures Website</h1>
+      <h1>Atef Random Pictures Website</h1>
       <div class="image-container">
         <img
           id="catImg"
@@ -19,13 +19,23 @@
       <button id="btn">GET RANDOM PIC</button>
 
       <div class="form-div">
-      <h2 class >Fill out the Form</h2>
+        <h2 class>Fill out the Form</h2>
         <form id="nameForm">
           <label for="firstName">First Name:</label>
-          <input type="text" id="firstName" name="firstName" required><br><br>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            required
+          /><br /><br />
 
           <label for="lastName">Last Name:</label>
-          <input type="text" id="lastName" name="lastName" required><br><br>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            required
+          /><br /><br />
 
           <button type="button" onclick="submitForm()">Submit</button>
         </form>
@@ -41,20 +51,19 @@
       const submitForm = async () => {
         const firstName = document.getElementById("firstName").value;
         const lastName = document.getElementById("lastName").value;
-        const url = "https://oikrw8t4th.execute-api.eu-west-2.amazonaws.com/post-message"
+        const url = "https://wkmb6ubnh4.execute-api.eu-west-2.amazonaws.com/new-post"
 
-        const res = await fetch("url", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ firstName, lastName }),
-        });
+        const response = await fetch(url,{
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ firstName, lastName }),
+          }
+        );
 
-        const userMessage = res.json()
-
-        alert(userMessage.message)
-      }
+        const result = await response.json();
+      };
     </script>
   </body>
 </html>
