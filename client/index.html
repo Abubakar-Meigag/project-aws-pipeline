@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>Atef Random Pictures Website</h1>
+      <h1>Beko Random Pictures Website</h1>
       <div class="image-container">
         <img
           id="catImg"
@@ -44,7 +44,7 @@
 
     <script src="https://oikrw8t4th.execute-api.eu-west-2.amazonaws.com/post-message"></script>
     <script>
-      $("#btn").click(function () {
+      document.getElementById("btn").addEventListener("click", function () {
         location.reload();
       });
     </script>
@@ -55,15 +55,22 @@
         const url =
           "https://wkmb6ubnh4.execute-api.eu-west-2.amazonaws.com/new-post";
 
-        const response = await fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ firstName, lastName }),
-        });
+        try {
+          const response = await fetch(url, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ firstName, lastName }),
+          });
 
-        const result = await response.json();
+          if (!response.ok) throw new Error("Network response was not ok");
+
+          const result = await response.json();
+          console.log("Form submitted successfully:", result);
+        } catch (error) {
+          console.error("Error submitting form:", error);
+        }
       };
     </script>
   </body>
