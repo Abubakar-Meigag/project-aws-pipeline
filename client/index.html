@@ -47,20 +47,21 @@
       $("#btn").click(function () {
         location.reload();
       });
-
+    </script>
+    <script>
       const submitForm = async () => {
         const firstName = document.getElementById("firstName").value;
         const lastName = document.getElementById("lastName").value;
-        const url = "https://wkmb6ubnh4.execute-api.eu-west-2.amazonaws.com/new-post"
+        const url =
+          "https://wkmb6ubnh4.execute-api.eu-west-2.amazonaws.com/new-post";
 
-        const response = await fetch(url,{
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ firstName, lastName }),
-          }
-        );
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ firstName, lastName }),
+        });
 
         const result = await response.json();
       };
