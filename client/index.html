@@ -65,9 +65,10 @@
           });
 
           if (!response.ok) throw new Error("Network response was not ok");
-
+          
           const result = await response.json();
           alert(result.message);
+          // throw new Error 
           console.log("Form submitted successfully:", result);
         } catch (error) {
           console.error("Error submitting form:", error);
