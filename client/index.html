@@ -17,29 +17,6 @@
         />
       </div>
       <button id="btn">GET RANDOM PIC</button>
-
-      <div class="form-div">
-        <h2 class>Fill out the Form</h2>
-        <form id="nameForm">
-          <label for="firstName">First Name:</label>
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            required
-          /><br /><br />
-
-          <label for="lastName">Last Name:</label>
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            required
-          /><br /><br />
-
-          <button type="button" onclick="submitForm()">Submit</button>
-        </form>
-      </div>
     </div>
 
     <script src="https://oikrw8t4th.execute-api.eu-west-2.amazonaws.com/post-message"></script>
@@ -47,33 +24,6 @@
       document.getElementById("btn").addEventListener("click", function () {
         location.reload();
       });
-    </script>
-    <script>
-      const submitForm = async () => {
-        const firstName = document.getElementById("firstName").value;
-        const lastName = document.getElementById("lastName").value;
-        const url =
-          "https://wkmb6ubnh4.execute-api.eu-west-2.amazonaws.com/new-post";
-
-        try {
-          const response = await fetch(url, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ firstName, lastName }),
-          });
-
-          if (!response.ok) throw new Error("Network response was not ok");
-          
-          const result = await response.json();
-          alert(result.message);
-          // throw new Error 
-          console.log("Form submitted successfully:", result);
-        } catch (error) {
-          console.error("Error submitting form:", error);
-        }
-      };
     </script>
   </body>
 </html>
